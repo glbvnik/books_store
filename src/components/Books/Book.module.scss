@@ -1,0 +1,164 @@
+.bookGrid {
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.34);
+  grid-template-areas:
+    "bookData bookData bookPhoto"
+    "bookChapters bookStores bookStores";
+  display: grid;
+  grid-template-columns: 40vw 15vw 200px;
+  grid-template-rows: 280px;
+  margin: auto;
+
+  .bookData {
+    grid-area: bookData;
+    padding: 24px;
+
+    h3 {
+      font-size: 48px;
+      margin-bottom: 48px;
+    }
+
+    div {
+      margin-left: 48px;
+
+      p {
+        margin-bottom: 6px;
+      }
+    }
+  }
+
+  .bookPhoto {
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.26);
+    grid-area: bookPhoto;
+    height: calc(100% - 24px);
+    width: calc(100% - 24px);
+    position: relative;
+    top: 24px;
+
+    img {
+      border-radius: 6px;
+    }
+  }
+
+  .bookChapters {
+    grid-area: bookChapters;
+    margin-top: 48px;
+    padding: 24px;
+
+    h2 {
+      margin-bottom: 24px;
+    }
+
+    .chapter {
+      border-radius: 6px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
+      margin-bottom: 6px;
+      padding: 16px 12px;
+    }
+  }
+
+  .bookStores {
+    grid-area: bookStores;
+    margin-top: 48px;
+    padding: 24px;
+
+    h2 {
+      margin-bottom: 24px;
+    }
+
+    .store {
+      border-radius: 6px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
+      margin-bottom: 6px;
+      padding: 16px 12px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-areas:
+      ". bookPhoto ."
+      "bookData bookData bookData"
+      "bookChapters bookChapters bookChapters"
+      "bookStores bookStores bookStores";
+    grid-template-columns: 30vw 200px 30vw;
+
+    .bookPhoto {
+      height: initial;
+      width: initial;
+    }
+
+    .bookData {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        margin-top: 24px;
+        margin-bottom: 48px;
+      }
+
+      div {
+        margin-left: 0;
+      }
+    }
+
+    .bookChapters,
+    .bookStores {
+      margin-top: 0;
+    }
+  }
+
+  @media (max-width: 540px) {
+    grid-template-columns: 25vw 200px 25vw;
+
+    .bookData {
+      h3 {
+        font-size: 40px;
+      }
+
+      div {
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 428px) {
+    grid-template-columns: 18vw 200px 18vw;
+
+    .bookData {
+      h3 {
+        font-size: 38px;
+        margin-bottom: 32px;
+      }
+
+      div {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .bookChapters,
+  .bookStores {
+    padding-top: 0;
+  }
+
+  @media (max-width: 375px) {
+    grid-template-columns: 16vw 200px 16vw;
+
+    .bookData {
+      h3 {
+        font-size: 34px;
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  @media (max-width: 320px) {
+    grid-template-columns: 14vw 200px 14vw;
+  }
+}
